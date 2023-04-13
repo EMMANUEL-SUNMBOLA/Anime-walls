@@ -11,3 +11,11 @@ function fetchimg(){
         return $data -> url;
     }
 }
+
+function fetchfact(string $anime){
+    $curl = curl_init("https://anime-facts-rest-api.herokuapp.com/api/v1/$anime");
+    curl_setopt($curl, CURLOPT_RETURNTRANSFER, true);
+    $result = curl_exec($curl);
+    $fact = json_decode($result);
+    return $fact -> fact ; 
+}
