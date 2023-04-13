@@ -55,6 +55,29 @@ if(isset($_POST["sub"]) && ($_SERVER["REQUEST_METHOD"] == "POST")){
         font-size: 20px;
         font-weight: 100;
     }
+
+    footer{
+        height: 100px;
+        display: flex;
+        align-items: center;
+        flex-direction: column;
+        width: 100%;
+        background-color: #000;
+        color: #fff;
+        font-family: sans-serif;
+        font-weight: 200;
+    }
+    footer ul{
+        list-style: none;
+    }
+    footer ul li{
+        font-size: 15px;
+    }
+    footer ul li img{
+        width: 30px;
+        height: 30px;
+        border-radius: 50%;
+    }
 </style>
 <body>
     <section>
@@ -81,5 +104,15 @@ if(isset($_POST["sub"]) && ($_SERVER["REQUEST_METHOD"] == "POST")){
                 </p>
         </div>
     </section>
+    <footer>
+        <ul>
+            <li>cavecodes</li>
+            <li>
+                <a href="https://github.com/EMMANUEL-SUNMBOLA"><img src="git.png" alt="..."></a>
+                <a href="https://twitter.com/SunmbolaAdedayo"><img src="twitter.jpeg" alt="..."></a>
+                <a href=""></a>
+            </li>
+        </ul>
+    </footer>
    </body>
 </html>
