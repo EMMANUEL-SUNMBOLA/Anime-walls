@@ -15,10 +15,11 @@ if(isset($_POST["sub"]) && ($_SERVER["REQUEST_METHOD"] == "POST")){
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Anime wall</title>
-    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.2.3/dist/css/bootstrap.min.css" rel="stylesheet"
-        integrity="sha384-rbsA2VBKQhggwzxH7pPCaAqO46MgnOM80zW1RWuH61DGLwZJEdK2Kadq2F9CUG65" crossorigin="anonymous">
 </head>
 <style>
+    body{
+        background-color: #1a2037;
+    }
     section{
         display: flex;
         align-items: center;
@@ -30,11 +31,29 @@ if(isset($_POST["sub"]) && ($_SERVER["REQUEST_METHOD"] == "POST")){
         width: 80%;
         display: grid;
         grid-template-columns: repeat(4,1fr);
+        grid-column-gap: 40px;
+        grid-row-gap: 5px;
     }
 
-    section .gridcont img:hover{
-        transform: scale(1.2);
+    section .gridcont .card{
+        outline: 1px solid white;
+        z-index: 2;
+        border-radius: 2px;
+    }
+
+    section .gridcont img{
+        width: 100%;
         transition: all .5s ease-in-out;
+        aspect-ratio: 1;
+    }
+    section .gridcont img:hover{
+        transform: scale(1.1);
+    }
+
+    .card-text{
+        color: aliceblue;
+        font-size: 20px;
+        font-weight: 100;
     }
 </style>
 <body>
@@ -49,18 +68,18 @@ if(isset($_POST["sub"]) && ($_SERVER["REQUEST_METHOD"] == "POST")){
             }
             ?>
         </div>
-        <div class="form">
+        <!-- <div class="form">
             <form action="" method="post">
                 <p class="card-title">FIND FACTS ABOUT YOUR FAVOURITE ANIME</p>
-                <input type="text" name="anime" value="<?= (isset($_POST["sub"])) ? $anime : "" ?>">
+                <input type="text" name="anime" value="<?php // echo (isset($_POST["sub"])) ? $anime : "" ?>">
                 <button type="submit" name="sub">FETCH</button>
-            </form>
-            <p class="card-text">
-                <?= (isset($_POST["sub"])) ? fetchfact($anime) : "FACTS WILL DISPLAY HERE"; ?></p>
+            </form> -->
+            <!-- <p class="card-text">
+                <?php // echo (isset($_POST["sub"])) ? fetchfact($anime) : "FACTS WILL DISPLAY HERE"; ?></p> -->
+                <p class="card-text">
+                    <?php availanime()?>
+                </p>
         </div>
     </section>
-    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.2.3/dist/js/bootstrap.bundle.min.js"
-        integrity="sha384-kenU1KFdBIe4zVF0s0G1M5b4hcpxyD9F7jL+jjXkk+Q2h455rYXK/7HAuoJl+0I4"
-        crossorigin="anonymous"></script>
-</body>
+   </body>
 </html>
