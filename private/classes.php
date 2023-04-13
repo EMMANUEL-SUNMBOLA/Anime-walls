@@ -7,5 +7,7 @@ function fetchimg(){
     $result = curl_exec($curl);
     $data = json_decode($result);
 
-    return $data -> url;
+    if(!is_null($data -> url)){
+        return $data -> url;
+    }
 }
