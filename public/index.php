@@ -100,7 +100,7 @@ if(isset($_POST["sub"]) && ($_SERVER["REQUEST_METHOD"] == "POST")){
             <!-- <p class="card-text">
                 <?php // echo (isset($_POST["sub"])) ? fetchfact($anime) : "FACTS WILL DISPLAY HERE"; ?></p> -->
                 <p class="card-text">
-                    <?php availanime()?>
+                    <?php uselessfact()?>
                 </p>
         </div>
     </section>

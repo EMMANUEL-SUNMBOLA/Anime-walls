@@ -23,12 +23,12 @@ function fetchfact(string $anime){
 }
 
 
-function availanime(){
-    $curl = curl_init("https://animechan.vercel.app/api/random");
+function uselessfact(){
+    $curl = curl_init("https://uselessfacts.jsph.pl/api/v2/facts/random?language=en");
     curl_setopt($curl, CURLOPT_RETURNTRANSFER, true);
     if(curl_exec($curl)){
         $data = json_decode(curl_exec($curl));
-        return $data -> quote;
+        return $data["text"];
     }else{
         return curl_errno($curl) . "    " . curl_error($curl);
     }
