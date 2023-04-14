@@ -27,7 +27,7 @@ function uselessfact(){
     $curl = curl_init("https://uselessfacts.jsph.pl/api/v2/facts/random?language=en");
     curl_setopt($curl, CURLOPT_RETURNTRANSFER, true);
     if(curl_exec($curl)){
-        $data = json_decode(curl_exec($curl));
+        $data = json_decode(curl_exec($curl), true);
         return $data["text"];
     }else{
         return curl_errno($curl) . "    " . curl_error($curl);
